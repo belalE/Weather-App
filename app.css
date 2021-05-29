@@ -1,0 +1,72 @@
+body {
+    background-color: #1d3557;
+    color: #f1faee;
+    display: flex;
+    font-family: "Poppins", sans-serif ;
+}
+
+.container {
+    margin: 0 10%;
+}
+
+#current_thumbnail {
+    max-width: 20%;
+    height: auto;
+}
+
+#current_temp {
+    font-size: 5em;
+}
+
+#current_conditions {
+    font-size: 4em;
+}
+
+#current_percipitation {
+    font-size: 4em;
+    color: red;
+}
+
+
+.day_temp {
+    font-size: 1em;
+
+}
+.day_conditions {
+    font-size: 1em;
+    color: #a8dadc;
+}
+.day_percipitation {
+    font-size: 1em;
+
+}
+
+.daily_thumbnail {
+    width: 50%;
+}  
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+.col {
+    flex-direction: column;
+    border: 10px black;
+    justify-content: space-between;
+}
+
+.day_block {
+    background-color: #457b9d;
+    border-radius: 10%;
+    text-align: center;
+}
+
+.img-inline {
+    display: inline;
+    width: 20%;
+    padding: 0px;
+    margin: 0px;
+    color: #a8dadc;
+}
