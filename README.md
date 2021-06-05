@@ -11,3 +11,5 @@ API KEY: 6c9a9b853d0cf36a4fbaef401170b3d2
 maybe add arabic
 
 https://openweathermap.org/api/hourly-forecast
+
+https://developers.google.com/maps/documentation/places/web-service/autocomplete
