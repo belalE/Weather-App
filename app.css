@@ -1,4 +1,4 @@
-body {
+/* body {
     background-color: #1d3557;
     color: #f1faee;
     display: flex;
@@ -15,7 +15,7 @@ body {
     height: auto;
 } */
 
-
+/* 
 #location {
     font-size: 5em;
     margin: 2% 5%;
@@ -45,8 +45,8 @@ body {
 .day_conditions {
     font-size: 1em;
     /* color: #; */
-}
-.day_percipitation {
+/* } */
+/* .day_percipitation {
     font-size: 1em;
 
 }
@@ -79,9 +79,9 @@ body {
     flex-direction: column;
     justify-content: center; */
     
-}
+/* }  */
 
-.img-inline {
+/* .img-inline {
     display: inline;
     width: 2em;
     padding: 0px;
@@ -92,12 +92,12 @@ body {
 div {
     border: 10px black;
     display: block;
-}
+} */ */ */
 
 
 /* This is for the Navbar */
 
-#brand-img {
+/* #brand-img {
     width: 3em;
 }
 
@@ -105,16 +105,12 @@ div {
     color: #e63946;
     font-weight: 800;
     font-size: 1.25em;
-}
-#navMenu {
-    display: flex;
+} */
+/* #navMenu {
     width: 1000px;
-    align-items: center;
-}
+} */
 
-nav {
-    width: fit-content;
-    height: 50px;
+/* nav {
     display: block;
 }
 
@@ -127,7 +123,7 @@ ul {
   }
   
   li {
-    float: left;
+    float: left !important;
   }
   
   li a {
@@ -136,10 +132,19 @@ ul {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    white-space: nowrap;
   }
   
   /* Change the link color to #111 (black) on hover */
-li a:hover { 
+/* li a:hover { 
     background-color: #111;
-  }
+  } */
 
+.raindrop {
+    width: 20px;
+    height: 20px;
+}
+
+#nav-logo {
+    filter: invert(94%) sepia(3%) saturate(729%) hue-rotate(64deg) brightness(106%) contrast(96%);
+}

@@ -5,88 +5,187 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Umbrella?</title>
-    <link rel="stylesheet" href="app.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="app.css" />
   </head>
   <body>
-    <nav>
-      <ul id="navMenu">
-        <li><img id="brand-img" src="wi-umbrella.svg" alt="" /></li>
-        <li>
-          <a id="brand" class="" href="#"> Umbrella?</a>
-        </li>
-        <li><a href="">Home</a></li>
-        <li><a href="">Search</a></li>
-        <li><a href="">About</a></li>
-      </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+          ><img
+            id="nav-logo"
+            src="/icons/wi-umbrella.svg"
+            alt=""
+            width="30"
+            height="24"
+          />Umbrella?</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li>
+              <img
+                id="d-inline-block align-text-top"
+                src="/icons/wi-umbrella.svg"
+                alt=""
+              />
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a
+                class="nav-link disabled"
+                href="#"
+                tabindex="-1"
+                aria-disabled="true"
+                >Disabled</a
+              >
+            </li> -->
+          </ul>
+        </div>
+      </div>
     </nav>
     <br />
     <div class="container">
-      <div class="row">
+      <div class="row bg-primary rounded">
         <div class="col">
           <h1 id="location">Irving, TX</h1>
-          <h2 id="current_temp">60˚F</h2>
-          <h2 id="current_percipitation">20%</h2>
+          <ul>
+            <li id="current_temp">60˚F</li>
+          <li id="current_percipitation">20%</li>
+          <li id="current_conditions">Cloudy</li>
+          </ul>
+          
         </div>
-        <div class="col">
-          <img id="current_thumbnail" src="wi-cloudy copy.svg" alt="" />
-          <h2 id="current_conditions">Cloudy</h2>
+        <div id="current_thumbnail" class="col">
+          <img class="img-fluid" src="icons/04d.png" alt="" />
         </div>
       </div>
       <br />
       <div class="row">
         <div class="col day_block">
-          <img src="wi-cloudy copy.svg" class="daily_thumbnail" alt="" />
-          <h3 class="day_temp" id="day1_temp">60˚F</h3>
-          <h3 class="day_conditions" id="day1_conditions">Cloudy</h3>
-          <h3 class="day_percipitation" id="day1_percipitation">20%</h3>
-          <img class="img-inline" src="wi-raindrop.svg" alt="" />
+          <div id="day1_thumbnail"><img
+            src=icons/04d.png
+            class="daily_thumbnail"
+            alt=""
+          /> </div
+          <ul>
+            <li class="day_temp" id="day1_temp">60˚F</li>
+            <li class="day_conditions" id="day1_conditions">Cloudy</li>
+            <li class="day_percipitation" id="day1_percipitation">20%</li>
+          </ul>
+          <!-- <img class="img-inline" src="/weather-icons-master/svg/wi-raindrop.svg" alt="" /> -->
         </div>
         <div class="col day_block">
-          <img src="wi-cloudy copy.svg" class="daily_thumbnail" alt="" />
-          <h3 class="day_temp" id="day2_temp">60˚F</h3>
-          <h3 class="day_conditions" id="day2_conditions">Cloudy</h3>
-          <h3 class="day_percipitation" id="day2_percipitation">20%</h3>
-          <img class="img-inline" src="wi-raindrop.svg" alt="" />
+          <div id="day2_thumbnail"><img
+            src=icons/04d.png
+            class="daily_thumbnail"
+            alt=""
+          /> </div
+          <ul>
+            <li class="day_temp" id="day2_temp">60˚F</li>
+            <li class="day_conditions" id="day2_conditions">Cloudy</li>
+            <li class="day_percipitation" id="day2_percipitation">20%</li>
+          </ul>
+          <!-- <img class="img-inline" src="/weather-icons-master/svg/wi-raindrop.svg" alt="" /> -->
         </div>
         <div class="col day_block">
-          <img src="wi-cloudy copy.svg" class="daily_thumbnail" alt="" />
-          <h3 class="day_temp" id="day3_temp">60˚F</h3>
-          <h3 class="day_conditions" id="day3_conditions">Cloudy</h3>
-          <h3 class="day_percipitation" id="day3_percipitation">20%</h3>
-          <img class="img-inline" src="wi-raindrop.svg" alt="" />
+          <div id="day3_thumbnail"><img
+            src=icons/04d.png
+            class="daily_thumbnail"
+            alt=""
+          /> </div
+          <ul>
+            <li class="day_temp" id="day3_temp">60˚F</li>
+            <li class="day_conditions" id="day3_conditions">Cloudy</li>
+            <li class="day_percipitation" id="day3_percipitation">20%</li>
+          </ul>
+          <!-- <img class="img-inline" src="/weather-icons-master/svg/wi-raindrop.svg" alt="" /> -->
         </div>
         <div class="col day_block">
-          <img src="wi-cloudy copy.svg" class="daily_thumbnail" alt="" />
-          <h3 class="day_temp" id="day4_temp">60˚F</h3>
-          <h3 class="day_conditions" id="day4_conditions">Cloudy</h3>
-          <h3 class="day_percipitation" id="day4_percipitation">20%</h3>
-          <img class="img-inline" src="wi-raindrop.svg" alt="" />
+          <div id="day4_thumbnail"><img
+            src=icons/04d.png
+            class="daily_thumbnail"
+            alt=""
+          /> </div
+          <ul>
+            <li class="day_temp" id="day4_temp">60˚F</li>
+            <li class="day_conditions" id="day4_conditions">Cloudy</li>
+            <li class="day_percipitation" id="day4_percipitation">20%</li>
+          </ul>
+          <!-- <img class="img-inline" src="/weather-icons-master/svg/wi-raindrop.svg" alt="" /> -->
         </div>
         <div class="col day_block">
-          <img src="wi-cloudy copy.svg" class="daily_thumbnail" alt="" />
-          <h3 class="day_temp" id="day5_temp">60˚F</h3>
-          <h3 class="day_conditions" id="day5_conditions">Cloudy</h3>
-          <h3 class="day_percipitation" id="day5_percipitation">20%</h3>
-          <img class="img-inline" src="wi-raindrop.svg" alt="" />
+          <div id="day5_thumbnail"><img
+            src=icons/04d.png
+            class="daily_thumbnail"
+            alt=""
+          /> </div
+          <ul>
+            <li class="day_temp" id="day5_temp">60˚F</li>
+            <li class="day_conditions" id="day5_conditions">Cloudy</li>
+            <li class="day_percipitation" id="day5_percipitation">20%</li>
+          </ul>
+          <!-- <img class="img-inline" src="/weather-icons-master/svg/wi-raindrop.svg" alt="" /> -->
         </div>
         <div class="col day_block">
-          <img src="wi-cloudy copy.svg" class="daily_thumbnail" alt="" />
-          <h3 class="day_temp" id="day6_temp">60˚F</h3>
-          <h3 class="day_conditions" id="day6_conditions">Cloudy</h3>
-          <h3 class="day_percipitation" id="day6_percipitation">20%</h3>
-          <img class="img-inline" src="wi-raindrop.svg" alt="" />
+          <div id="day6_thumbnail"><img
+            src=icons/04d.png
+            class="daily_thumbnail"
+            alt=""
+          /> </div
+          <ul>
+            <li class="day_temp" id="day6_temp">60˚F</li>
+            <li class="day_conditions" id="day6_conditions">Cloudy</li>
+            <li class="day_percipitation" id="day6_percipitation">20%</li>
+          </ul>
+          <!-- <img class="img-inline" src="/weather-icons-master/svg/wi-raindrop.svg" alt="" /> -->
         </div>
         <div class="col day_block">
-          <img src="wi-cloudy copy.svg" class="daily_thumbnail" alt="" />
-          <h3 class="day_temp" id="day7_temp">60˚F</h3>
-          <h3 class="day_conditions" id="day7_conditions">Cloudy</h3>
-          <h3 class="day_percipitation" id="day7_percipitation">20%</h3>
-          <img class="img-inline" src="wi-raindrop.svg" alt="" />
+          <div id="day7_thumbnail"><img
+            src=icons/04d.png
+            class="daily_thumbnail"
+            alt=""
+          /> </div
+          <ul>
+            <li class="day_temp" id="day7_temp">60˚F</li>
+            <li class="day_conditions" id="day7_conditions">Cloudy</li>
+            <li class="day_percipitation" id="day7_percipitation">20%</li>
+          </ul>
+          <!-- <img class="img-inline" src="/weather-icons-master/svg/wi-raindrop.svg" alt="" /> -->
         </div>
       </div>
     </div>
