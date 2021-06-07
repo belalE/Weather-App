@@ -8,16 +8,22 @@ function parseURL() {
     let params = new URLSearchParams(location.search);
     const lat = params.get('lat');
     const long = params.get('long');
-    console.log('lat: ', lat, ";long: ", long)
     return [lat, long]
 }
 
-function getURL(lat, lon, units) {
+function getWeatherURL(lat, lon, units) {
     const API_key = '6c9a9b853d0cf36a4fbaef401170b3d2';
     const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${API_key}&units=${units}`;
-    console.log(url)
     return url;
 }
+
+function getGeocodeURL(lat, lon) {
+    const API_key = 'CjYSjaHyv9CSWQrK7JOeBaLDkcK5ooqi';
+    const url = `http://open.mapquestapi.com/geocoding/v1/reverse?key=${API_key}&location=${lat},${lon}`
+
+    return url;
+}
+
 
 async function getData(url) { 
     const response = await fetch(url);
@@ -27,14 +33,17 @@ async function getData(url) {
 
 async function handleData() {
     const position = parseURL()
-    const url = getURL(position[0], position[1], 'imperial');
-    const data = await getData(url);
-    updateCurrentInfo(data)
-    updateForecastInfo(data)
+    const weather_url = getWeatherURL(position[0], position[1], 'imperial');
+    const geocode_url = getGeocodeURL(position[0],position[1]);
+    const weather_data = await getData(weather_url);
+    const geocode_data = await getData(geocode_url);
+    const city_name = geocode_data['results'][0]['locations'][0]['adminArea5'];
+    updateCurrentInfo(weather_data, city_name)
+    updateForecastInfo(weather_data)
 }
 
-function updateCurrentInfo(data) {
-    location_title.textContent = `${''} Weather`; // NEED TO UPDATE
+function updateCurrentInfo(data, city_name) {
+    location_title.textContent = `${city_name} Weather`; // NEED TO UPDATE
     current_temp.textContent = `${Math.round(data.current.temp)}˚F`;
     current_conditions.textContent = data.current.weather[0].main;
     current_thumbnail.innerHTML = `<img src="/icons/${ data.current.weather[0].icon }.png">`;
