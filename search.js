@@ -42,15 +42,12 @@ async function updateSearchResults() {
     if (text.length > 1) {
         const url = getSearchURL(text);
         const data = await getData(url);
-        console.log(data['results'])
         var htmlString = "";
         for (let i=0; i < data['results'].length; i++) {
             const result = data['results'][i];
             const resultStr = `<li>${result.displayString}</li>`
-            console.log(resultStr)
             htmlString += resultStr;
         }
-        console.log(htmlString)
         resultsList.innerHTML = htmlString
     }
 }
