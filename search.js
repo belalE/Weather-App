@@ -45,7 +45,9 @@ async function updateSearchResults() {
         var htmlString = "";
         for (let i=0; i < data['results'].length; i++) {
             const result = data['results'][i];
-            const resultStr = `<li>${result.displayString}</li>`
+            const position = result['place']['geometry']['coordinates']
+            const linkUrl = `index.html?lat=${position[1]}&long=${position[0]}`
+            const resultStr = `<li><a href=${linkUrl}>${result.displayString}</ a></li>`
             htmlString += resultStr;
         }
         resultsList.innerHTML = htmlString
