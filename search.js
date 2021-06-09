@@ -1,6 +1,7 @@
 const current_location_button = document.querySelector('#current_location');
 const searchbar = document.querySelector('#searchbar');
 const resultsList = document.querySelector('#search_results');
+const searchWrapper = document.querySelector(".search-input");
 
 
 // Get Current Location Setup
@@ -43,6 +44,7 @@ async function updateSearchResults() {
         const url = getSearchURL(text);
         const data = await getData(url);
         var htmlString = "";
+        searchWrapper.classList.add("active")
         for (let i=0; i < data['results'].length; i++) {
             const result = data['results'][i];
             const position = result['place']['geometry']['coordinates']
