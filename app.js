@@ -64,9 +64,7 @@ function updateCurrentInfo(data, city_name) {
     location_title.textContent = `${city_name} Weather`; // NEED TO UPDATE
     current_temp.textContent = `${Math.round(currentData.temp)}˚F`;
     current_conditions.textContent = currentData.weather[0].main;
-    console.log(currentData.weather[0].icon)
     current_thumbnail.innerHTML = `<img src="/icons/${ currentData.weather[0].icon }.png">`;
-    console.log(currentData.rain)
     const rain = (currentData.rain) ? currentData.rain['1h'] : 0;
     current_percipitation.textContent = `${rain} mm of rain`;
 
@@ -96,7 +94,7 @@ function updateHourlyInfo(data) {
         temp.textContent = temperature;
         conditions.textContent = hour_data.weather[0].main;
         thumbnail.innerHTML = `<img src="/icons/${ hour_data.weather[0].icon }.png">`;
-        const rain = (hour_data.rain != null) ? hour_data.rain : 0;
+        const rain = (hour_data.rain != null) ? hour_data.rain['1h'] : 0;
         precipitation.textContent = `${rain} mm of rain`
         // Get info from Unix timestamp
         dateH3.textContent = getHour(hour_data['dt'])
