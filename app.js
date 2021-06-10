@@ -56,19 +56,21 @@ function updateForecastInfo(data) {
         const conditions = document.querySelector(`#day${i}_conditions`);
         const precipitation = document.querySelector(`#day${i}_percipitation`);
         const thumbnail = document.querySelector(`#day${i}_thumbnail`);
+        const dateH3 = document.querySelector(`#day${i}_date`);
 
         const day_data = data.daily[i]
-        const a = new Date(day_data['dt']*1000)
-        var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-        var month = months[a.getMonth()];
-        var date = a.getDate();
-        var weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][a.getDay()]
-        console.log(weekday, month, date)
         temp.textContent = `${Math.round(day_data.temp.day)}˚F`;
         conditions.textContent = day_data.weather[0].main;
         thumbnail.innerHTML = `<img src="/icons/${ day_data.weather[0].icon }.png">`;
         const rain = (day_data.rain != null) ? day_data.rain : 0;
         precipitation.textContent = `${rain} mm of rain`
+        // Get info from Unix timestamp
+        const a = new Date(day_data['dt']*1000)
+        var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        var month = months[a.getMonth()];
+        var date = a.getDate();
+        var weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][a.getDay()]
+        dateH3.textContent = `${weekday}, ${month} ${date}`
     }
 } 
 
