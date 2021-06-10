@@ -20,7 +20,6 @@ function getWeatherURL(lat, lon, units) {
 function getGeocodeURL(lat, lon) {
     const API_key = 'CjYSjaHyv9CSWQrK7JOeBaLDkcK5ooqi';
     const url = `http://open.mapquestapi.com/geocoding/v1/reverse?key=${API_key}&location=${lat},${lon}`
-
     return url;
 }
 
@@ -52,13 +51,19 @@ function updateCurrentInfo(data, city_name) {
 }
 
 function updateForecastInfo(data) {
-    for (i =1; i < 8; i++) {
+    for (i =1; i < 7; i++) {
         const temp = document.querySelector(`#day${i}_temp`);
         const conditions = document.querySelector(`#day${i}_conditions`);
         const precipitation = document.querySelector(`#day${i}_percipitation`);
         const thumbnail = document.querySelector(`#day${i}_thumbnail`);
 
         const day_data = data.daily[i]
+        const a = new Date(day_data['dt']*1000)
+        var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        var month = months[a.getMonth()];
+        var date = a.getDate();
+        var weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][a.getDay()]
+        console.log(weekday, month, date)
         temp.textContent = `${Math.round(day_data.temp.day)}˚F`;
         conditions.textContent = day_data.weather[0].main;
         thumbnail.innerHTML = `<img src="/icons/${ day_data.weather[0].icon }.png">`;
