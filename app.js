@@ -19,6 +19,9 @@ function parseURL() {
     let params = new URLSearchParams(location.search);
     const lat = params.get('lat');
     const long = params.get('long');
+    if ((lat == null) || (long == null)) {
+        window.location.replace("/home.html");
+    }
     return [lat, long]
 }
 
@@ -57,11 +60,12 @@ async function handleData() {
     updateCurrentInfo(weather_data, name_str);
     updateForecastInfo(weather_data);
     updateHourlyInfo(weather_data);
+    document.body.classList.remove('hidden');
 }
 
 function updateCurrentInfo(data, city_name) {
     const currentData = data.current
-    location_title.textContent = `${city_name} Weather`; // NEED TO UPDATE
+    location_title.textContent = `${city_name} Weather`;
     current_temp.textContent = `${Math.round(currentData.temp)}˚F`;
     current_conditions.textContent = currentData.weather[0].main;
     current_thumbnail.innerHTML = `<img src="/icons/${ currentData.weather[0].icon }.png">`;
@@ -82,7 +86,7 @@ function updateCurrentInfo(data, city_name) {
 }
 
 function updateHourlyInfo(data) {
-    for (i =1; i < 7; i++) {
+    for (let i =1; i < 7; i++) {
         const temp = document.querySelector(`#hour${i}_temp`);
         const conditions = document.querySelector(`#hour${i}_conditions`);
         const precipitation = document.querySelector(`#hour${i}_percipitation`);
@@ -102,7 +106,7 @@ function updateHourlyInfo(data) {
 } 
 
 function updateForecastInfo(data) {
-    for (i =1; i < 7; i++) {
+    for (let i =1; i < 7; i++) {
         const temp = document.querySelector(`#day${i}_temp`);
         const conditions = document.querySelector(`#day${i}_conditions`);
         const precipitation = document.querySelector(`#day${i}_percipitation`);
@@ -162,4 +166,5 @@ function getHour(unix) {
     }
 }
 
+// setTimeout(handleData(), 6000)
 handleData();

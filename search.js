@@ -3,6 +3,13 @@ const searchbar = document.querySelector('#searchbar');
 const resultsList = document.querySelector('#search_results');
 const searchWrapper = document.querySelector(".search-input");
 
+searchbar.addEventListener('keydown',(e) => {
+    if(e.keyCode == 13) {
+        e.preventDefault();
+        return false;
+    }
+})
+
 
 // Get Current Location Setup
 function success(pos) {

@@ -7,6 +7,10 @@ dark blue: #1d3557
 
 */
 
+.hidden {
+    display: none;
+}
+
 body {
     background-color: #f1faee ;
     color: #1d3557;
@@ -23,11 +27,11 @@ body {
 
 #location {
     color: #f1faee;
-    background-color: #e63946;
+    background-color: #457b9d;
 }
 
 nav{
-    background-color: #e63946;
+    background-color: #457b9d;
 }
 
 nav a, #current_location, #home {
