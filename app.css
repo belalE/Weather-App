@@ -1,15 +1,29 @@
+/* 
+red: #e63946
+white: #f1faee
+light blue: #a8dadc
+medium blue: #457b9d
+dark blue: #1d3557
+
+*/
+
 body {
     background-color: #f1faee ;
     color: #1d3557;
     font-family: "Poppins", sans-serif ;
 }
 
-.day_block, .current{
+.day_block, .current, .hour_block{
     background-color: #a8dadc;
 }
 
 .day_block img {
     width: 75%;
+}
+
+#location {
+    color: #f1faee;
+    background-color: #e63946;
 }
 
 #navbar {

@@ -79,70 +79,166 @@
     </nav>
     <div class="container">
       <section class="mb-4">
-        <h1 class="display-1 text-center my-4" id="location">Weather</h1>
-      <div class="row current p-5 rounded">
-        <div class="col">
-          <h2 class="display-4">Currently</h2>
+        <h1 class="display-1 text-center my-4 p-3 rounded-pill" id="location">Weather</h1>
+        <div class="row current p-5 rounded">
+          <div class="col">
+        <h2 class="display-4">Currently</h2>
           <ul class="list-unstyled">
             <li class="fs-1 fw-bold" id="current_temp">60˚F</li>
             <li class="fs-2" id="current_conditions">Cloudy</li>
             <li class="fs-3" id="current_percipitation">20%</li>
           </ul>
         </div>
-        <div class="col">
-          <img  id="current_thumbnail" class="img-fluid" src="icons/04d.png" alt="" />
+        <div id="current_thumbnail" class="col">
+          <img   class="img-fluid" src="icons/04d.png" alt="" />
         </div>
       </div>
       </section>
-      <div class="row">
-        <div class="col">
-          <div class="">
-            <img src="" alt="">
-            <b>Feels Like</b>
-            <span class="" id="current_feels_like"> </span>
+      <section>
+        <div class="row">
+          <div class="col">
+            <div class="">
+              <img src="" alt="">
+              <b>Feels Like</b>
+              <span class="" id="current_feels_like"> </span>
+            </div>
+            <div class="">
+              <img src="" alt="">
+              <b>Sunrise</b>
+              <span id="current_sunrise"></span>
+            </div>
+            <div class="">
+              <img src="" alt="">
+              <b>UV Index</b>
+              <span id="current_uvi"></span>
+            </div>
+            <div class="">
+              <img src="" alt="">
+              <b>Wind Speed</b>
+              <span id="current_windspeed"></span>
+            </div>
           </div>
-          <div class="">
-            <img src="" alt="">
-            <b>Sunrise</b>
-            <span id="current_sunrise"></span>
-          </div>
-          <div class="">
-            <img src="" alt="">
-            <b>UV Index</b>
-            <span id="current_uvi"></span>
-          </div>
-          <div class="">
-            <img src="" alt="">
-            <b>Wind Speed</b>
-            <span id="current_windspeed"></span>
+          <div class="col">
+            <div class="">
+              <img src="" alt="">
+              <b>Humidity</b>
+              <span id="current_humidity"> </span>
+            </div>
+            <div class="">
+              <img src="" alt="">
+              <b>Sunset</b>
+              <span id="current_sunset"> </span>
+            </div>
+            
+            <div class="">
+              <img src="" alt="">
+              <b>Visibility</b>
+              <span id="current_visibility"></span>
+            </div>
+            <div class="">
+              <img src="" alt="">
+              <b>Pressure</b>
+              <span id="current_pressure"> </span>
+            </div>
           </div>
         </div>
-        <div class="col">
-          <div class="">
-            <img src="" alt="">
-            <b>Humidity</b>
-            <span id="current_humidity"> </span>
-          </div>
-          <div class="">
-            <img src="" alt="">
-            <b>Sunset</b>
-            <span id="current_sunset"> </span>
-          </div>
+      </section>
+      <section>
+        <h2 class="display-4">Hourly Forecast</h2>
+      <div class="row">
+        <div class="col hour_block me-3 mb-3 p-3 rounded">
+          <h3 class="hour_date" id="hour1_date">Monday</h3>
+          <div id="hour1_thumbnail"><img
+            src=icons/04d.png
+            class="hourly_thumbnail"
+            alt=""
+          /> </div
+          <ul class="list-unstyled">
+            <li class="hour_temp" id="hour1_temp">60˚F</li>
+            <li class="hour_conditions" id="hour1_conditions">Cloudy</li>
+            <li class="hour_percipitation" id="hour1_percipitation">20%</li>
+          </ul>
           
-          <div class="">
-            <img src="" alt="">
-            <b>Visibility</b>
-            <span id="current_visibility"> </span>
-          </div>
-          <div class="">
-            <img src="" alt="">
-            <b>Pressure</b>
-            <span id="current_pressure"> </span>
-          </div>
+        </div>
+        <div class="col hour_block me-3 mb-3 p-3 rounded">
+          <h3 class="hour_date" id="hour2_date">Tuesday</h3>
+
+          <div id="hour2_thumbnail"><img
+            src=icons/04d.png
+            class="hourly_thumbnail"
+            alt=""
+          /> </div
+          <ul class="list-unstyled">
+            <li class="hour_temp" id="hour2_temp">60˚F</li>
+            <li class="hour_conditions" id="hour2_conditions">Cloudy</li>
+            <li class="hour_percipitation" id="hour2_percipitation">20%</li>
+          </ul>
+          
+        </div>
+        <div class="col hour_block me-3 mb-3 p-3 rounded">
+          <h3 class="hour_date" id="hour3_date">Wednesday</h3>
+
+          <div id="hour3_thumbnail"><img
+            src=icons/04d.png
+            class="hourly_thumbnail"
+            alt=""
+          /> </div
+          <ul class="list-unstyled">
+            <li class="hour_temp" id="hour3_temp">60˚F</li>
+            <li class="hour_conditions" id="hour3_conditions">Cloudy</li>
+            <li class="hour_percipitation" id="hour3_percipitation">20%</li>
+          </ul>
+          
+        </div>
+        <div class="col hour_block me-3 mb-3 p-3 rounded">
+          <h3 class="hour_date" id="hour4_date">Thursday</h3>
+
+          <div id="hour4_thumbnail"><img
+            src=icons/04d.png
+            class="hourly_thumbnail"
+            alt=""
+          /> </div
+          <ul class="list-unstyled">
+            <li class="hour_temp" id="hour4_temp">60˚F</li>
+            <li class="hour_conditions" id="hour4_conditions">Cloudy</li>
+            <li class="hour_percipitation" id="hour4_percipitation">20%</li>
+          </ul>
+          
+        </div>
+        <div class="col hour_block me-3 mb-3 p-3 rounded">
+          <h3 class="hour_date" id="hour5_date">Friday</h3>
+
+          <div id="hour5_thumbnail"><img
+            src=icons/04d.png
+            class="hourly_thumbnail"
+            alt=""
+          /> </div
+          <ul class="list-unstyled">
+            <li class="hour_temp" id="hour5_temp">60˚F</li>
+            <li class="hour_conditions" id="hour5_conditions">Cloudy</li>
+            <li class="hour_percipitation" id="hour5_percipitation">20%</li>
+          </ul>
+          
+        </div>
+        <div class="col hour_block me-3 mb-3 p-3 rounded">
+          <h3 class="hour_date" id="hour6_date">Saturday</h3>
+
+          <div id="hour6_thumbnail"><img
+            src=icons/04d.png
+            class="hourly_thumbnail"
+            alt=""
+          /> </div
+          <ul class="list-unstyled">
+            <li class="hour_temp" id="hour6_temp">60˚F</li>
+            <li class="hour_conditions" id="hour6_conditions">Cloudy</li>
+            <li class="hour_percipitation" id="hour6_percipitation">20%</li>
+          </ul>
+          
         </div>
       </div>
+      </section>
       <section>
-        <h2 class="display-4">Weekly Weather</h2>
+        <h2 class="display-4">Weekly Forecast</h2>
       <div class="row">
         <div class="col day_block me-3 mb-3 p-3 rounded">
           <h3 class="day_date" id="day1_date">Monday</h3>

@@ -47,11 +47,16 @@ async function handleData() {
     const geocode_url = getGeocodeURL(position[0],position[1]);
     const weather_data = await getData(weather_url);
     const geocode_data = await getData(geocode_url);
+
+    //get location string
     const city_name = geocode_data['results'][0]['locations'][0]['adminArea5'];
     const state_name = geocode_data['results'][0]['locations'][0]['adminArea3'];
-    const name_str = `${city_name}, ${state_name}`
-    updateCurrentInfo(weather_data, name_str)
-    updateForecastInfo(weather_data)
+    const name_str = `${city_name}, ${state_name}`;
+
+    //call update functions
+    updateCurrentInfo(weather_data, name_str);
+    updateForecastInfo(weather_data);
+    updateHourlyInfo(weather_data);
 }
 
 function updateCurrentInfo(data, city_name) {
@@ -59,8 +64,10 @@ function updateCurrentInfo(data, city_name) {
     location_title.textContent = `${city_name} Weather`; // NEED TO UPDATE
     current_temp.textContent = `${Math.round(currentData.temp)}˚F`;
     current_conditions.textContent = currentData.weather[0].main;
+    console.log(currentData.weather[0].icon)
     current_thumbnail.innerHTML = `<img src="/icons/${ currentData.weather[0].icon }.png">`;
-    const rain = (currentData.rain != null) ? currentData.current.rain['1h'] : 0;
+    console.log(currentData.rain)
+    const rain = (currentData.rain) ? currentData.rain['1h'] : 0;
     current_percipitation.textContent = `${rain} mm of rain`;
 
     //Details
@@ -75,6 +82,26 @@ function updateCurrentInfo(data, city_name) {
     current_pressure.textContent = `${currentData.pressure} hPa`;
 
 }
+
+function updateHourlyInfo(data) {
+    for (i =1; i < 7; i++) {
+        const temp = document.querySelector(`#hour${i}_temp`);
+        const conditions = document.querySelector(`#hour${i}_conditions`);
+        const precipitation = document.querySelector(`#hour${i}_percipitation`);
+        const thumbnail = document.querySelector(`#hour${i}_thumbnail`);
+        const dateH3 = document.querySelector(`#hour${i}_date`);
+
+        const hour_data = data.hourly[i]
+        const temperature = `${Math.round(hour_data.temp)}˚F`;
+        temp.textContent = temperature;
+        conditions.textContent = hour_data.weather[0].main;
+        thumbnail.innerHTML = `<img src="/icons/${ hour_data.weather[0].icon }.png">`;
+        const rain = (hour_data.rain != null) ? hour_data.rain : 0;
+        precipitation.textContent = `${rain} mm of rain`
+        // Get info from Unix timestamp
+        dateH3.textContent = getHour(hour_data['dt'])
+    }
+} 
 
 function updateForecastInfo(data) {
     for (i =1; i < 7; i++) {
@@ -111,11 +138,30 @@ function getTime(unix) {
         const time = `${hours-12}:${minutes} pm`;
             return time;
 
-    } else {
+    } if (hours == 0) {
+        const time = `${hours+12}:${minutes} am`;
+        return time;
+    } else  {
         const time = `${hours}:${minutes} am`;
         return time;
     }
 
 } 
+
+function getHour(unix) {
+    const a = new Date(unix*1000);
+    const hours = a.getHours();
+    if (hours > 12) {
+        const time = `${hours-12} pm`;
+            return time;
+
+    } if (hours == 0) {
+        const time = `${hours+12} am`;
+        return time;
+    } else {
+        const time = `${hours} am`;
+        return time;
+    }
+}
 
 handleData();
