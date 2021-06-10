@@ -55,5 +55,7 @@ async function updateSearchResults() {
         resultsList.innerHTML = htmlString
     }
 }
-
+document.addEventListener('click', () => {
+    searchWrapper.classList.remove("active")
+})
 searchbar.addEventListener('keyup', updateSearchResults);
