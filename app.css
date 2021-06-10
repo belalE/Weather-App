@@ -26,9 +26,14 @@ body {
     background-color: #e63946;
 }
 
-#navbar {
+nav{
     background-color: #e63946;
 }
+
+nav a, #current_location, #home {
+    color: #f1faee;
+}
+
 
 #current_thumbnail {
     width: 50%;

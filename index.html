@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="app.css" />
   </head>
   <body>
-    <nav id="navbar"class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav id="navbar"class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"
           ><img
@@ -51,10 +51,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link" id="home" aria-current="page" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <button class="btn nav-link bg-dark" id="current_location">
+              <button class="btn nav-link" id="current_location">
                 Current Location
               </button>
             </li>
@@ -94,56 +94,56 @@
         </div>
       </div>
       </section>
-      <section>
+      <section class="mb-4">
         <div class="row">
           <div class="col">
-            <div class="">
-              <img src="" alt="">
+            <div class="d-flex justify-content-between mb-2 border-bottom pb-1">
+              <!-- <img src="" alt=""> -->
               <b>Feels Like</b>
               <span class="" id="current_feels_like"> </span>
             </div>
-            <div class="">
-              <img src="" alt="">
+            <div class="d-flex justify-content-between mb-2 border-bottom pb-1">
+              <!-- <img src="" alt=""> -->
               <b>Sunrise</b>
               <span id="current_sunrise"></span>
             </div>
-            <div class="">
-              <img src="" alt="">
+            <div class="d-flex justify-content-between mb-2 border-bottom pb-1">
+              <!-- <img src="" alt=""> -->
               <b>UV Index</b>
               <span id="current_uvi"></span>
             </div>
-            <div class="">
-              <img src="" alt="">
+            <div class="d-flex justify-content-between mb-2 border-bottom pb-1">
+              <!-- <img src="" alt=""> -->
               <b>Wind Speed</b>
               <span id="current_windspeed"></span>
             </div>
           </div>
           <div class="col">
-            <div class="">
-              <img src="" alt="">
+            <div class="d-flex justify-content-between mb-2 border-bottom pb-1">
+              <!-- <img src="" alt=""> -->
               <b>Humidity</b>
               <span id="current_humidity"> </span>
             </div>
-            <div class="">
-              <img src="" alt="">
+            <div class="d-flex justify-content-between mb-2 border-bottom pb-1">
+              <!-- <img src="" alt=""> -->
               <b>Sunset</b>
               <span id="current_sunset"> </span>
             </div>
             
-            <div class="">
-              <img src="" alt="">
+            <div class="d-flex justify-content-between mb-2 border-bottom pb-1">
+              <!-- <img src="" alt=""> -->
               <b>Visibility</b>
               <span id="current_visibility"></span>
             </div>
-            <div class="">
-              <img src="" alt="">
+            <div class="d-flex justify-content-between mb-2 border-bottom pb-1">
+              <!-- <img src="" alt=""> -->
               <b>Pressure</b>
               <span id="current_pressure"> </span>
             </div>
           </div>
         </div>
       </section>
-      <section>
+      <section class="mb-4">
         <h2 class="display-4">Hourly Forecast</h2>
       <div class="row">
         <div class="col hour_block me-3 mb-3 p-3 rounded">
@@ -237,7 +237,7 @@
         </div>
       </div>
       </section>
-      <section>
+      <section class="mb-4">
         <h2 class="display-4">Weekly Forecast</h2>
       <div class="row">
         <div class="col day_block me-3 mb-3 p-3 rounded">
