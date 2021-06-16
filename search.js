@@ -34,7 +34,7 @@ current_location_button.addEventListener('click', () => {
 
 function getSearchURL(text) {
     const API_key = 'CjYSjaHyv9CSWQrK7JOeBaLDkcK5ooqi';
-    const url = `http://www.mapquestapi.com/search/v3/prediction?key=${API_key}&limit=5&collection=adminArea,&q=${text}`
+    const url = `https://www.mapquestapi.com/search/v3/prediction?key=${API_key}&limit=5&collection=adminArea,&q=${text}`
     return url;
 }
 

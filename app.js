@@ -33,7 +33,7 @@ function getWeatherURL(lat, lon, units) {
 
 function getGeocodeURL(lat, lon) {
     const API_key = 'CjYSjaHyv9CSWQrK7JOeBaLDkcK5ooqi';
-    const url = `http://open.mapquestapi.com/geocoding/v1/reverse?key=${API_key}&location=${lat},${lon}`
+    const url = `https://open.mapquestapi.com/geocoding/v1/reverse?key=${API_key}&location=${lat},${lon}`
     return url;
 }
 
